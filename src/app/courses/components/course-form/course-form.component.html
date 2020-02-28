@@ -1,0 +1,12 @@
+<mat-horizontal-stepper [linear]="isLinear" #stepper>
+
+  <mat-step>
+    <ng-template matStepLabel>Basic Information</ng-template>
+    <app-course-form-basic-info></app-course-form-basic-info>
+  </mat-step>
+
+  <mat-step>
+    <ng-template matStepLabel>Confirm creation</ng-template>
+    <app-course-form-confirm [stepper]="stepper" [currentCourse]="currentCourse$ | async"></app-course-form-confirm>
+  </mat-step>
+</mat-horizontal-stepper>
